@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How React Works: Virtual DOM Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>How React Works Under the Hood</h1>
+        
+        <section>
+            <h2>Component Rendering & State Updates</h2>
+            <p>This section shows how components render and re-render with state changes, using a virtual DOM.</p>
+            <div id="app"></div>
+            <button id="update-btn">Update Name</button>
+        </section>
+        
+        <section>
+            <h2>Shadow DOM Demonstration</h2>
+            <p>This section shows style and DOM encapsulation, with light DOM projection and animations.</p>
+            <div class="shadow-container">
+                <my-element id="shadow-element">
+                    <span id="light-content">Projected content from light DOM</span>
+                </my-element>
+                <svg class="dash-lines" width="100%" height="20">
+                    <line x1="10%" y1="10" x2="90%" y2="10" class="dash-line" />
+                </svg>
+            </div>
+            <button id="update-light-btn">Update Light DOM</button>
+        </section>
+
+        <section class="reconciliation-demo">
+            <h2>React Reconciliation Process</h2>
+            <p>This section visualizes how React reconciles changes using the Virtual DOM.</p>
+            <div class="reconciliation-flow">
+                <div class="node app">App</div>
+                <div class="nodes">
+                    <div class="node">Node 1</div>
+                    <div class="node">Node 2</div>
+                    <div class="node">Node 3</div>
+                </div>
+                <div class="react-elements">
+                    <div class="code-box">React Elements</div>
+                    <pre class="code">const element = React.createElement('div', null, 'Hello, World!');</pre>
+                </div>
+                <div class="vdom previous-vdom">Previous Virtual DOM</div>
+                <div class="vdom new-vdom">New Virtual DOM</div>
+                <div class="changes">Changes</div>
+                <div class="actual-dom">Actual DOM</div>
+                <div class="phases">
+                    <div class="phase render-phase">Render Phase</div>
+                    <div class="phase commit-phase">Commit Phase</div>
+                </div>
+                <svg class="flow-lines" width="100%" height="600">
+                    <path d="M50 50 L50 100 L150 100 L150 200 L250 200 L250 300 L350 300 L350 400 L450 400 L450 500" class="flow-line" />
+                </svg>
+            </div>
+            <button id="animate-reconciliation-btn">Animate Reconciliation</button>
+        </section>
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>
